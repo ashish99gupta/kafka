@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.kafka.learn.KafkaApplication
+Built-by: Ashish gupta
+

@@ -1,0 +1,19 @@
+plugins {
+    id "net.ltgt.apt" version "0.9"
+    id "application"
+    id "java"
+    id "idea"
+}
+
+group _group
+version _version
+
+sourceCompatibility=1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+apply from: "$rootDir/gradle/dependencies.gradle"
+apply from: "$rootDir/gradle/distribution.gradle"

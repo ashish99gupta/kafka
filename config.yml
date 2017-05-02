@@ -1,0 +1,20 @@
+server:
+  registerDefaultExceptionMappers: false
+  applicationContextPath: /kafka
+  adminContextPath: /
+  applicationConnectors:
+    - type: http
+      port: 5000
+  adminConnectors:
+    - type: http
+      port: 5001
+  requestLog:
+    timeZone: IST
+  gzip:
+    bufferSize: 100KiB
+  maxThreads: 1024
+  allowedMethods:
+    - GET
+    - PUT
+    - POST
+    - DELETE
