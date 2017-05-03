@@ -14,6 +14,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 public class ProducerService {
     @Inject
     ProducerService(){}
+
     public void produce(){
         //Assign topicName to string variable
         String topicName ="test";

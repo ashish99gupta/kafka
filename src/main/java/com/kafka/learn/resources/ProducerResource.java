@@ -9,12 +9,12 @@ import javax.ws.rs.Path;
 import com.kafka.learn.service.ProducerService;
 
 @Path("/produce")
-public class Producer {
+public class ProducerResource {
 
     private ProducerService producerService;
 
     @Inject
-    public Producer(ProducerService service){
+    public ProducerResource(ProducerService service){
         this.producerService = service;
     }
 

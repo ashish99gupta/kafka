@@ -2,8 +2,8 @@ package com.kafka.learn.dagger;
 
 import javax.inject.Singleton;
 
-import com.kafka.learn.resources.Consumption;
-import com.kafka.learn.resources.Producer;
+import com.kafka.learn.resources.ConsumerResource;
+import com.kafka.learn.resources.ProducerResource;
 
 import dagger.Component;
 
@@ -11,8 +11,8 @@ import dagger.Component;
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
 
-     Producer producer();
-     Consumption consumption();
+     ProducerResource producer();
+     ConsumerResource consumption();
 
     @Component.Builder
     public interface Builder {

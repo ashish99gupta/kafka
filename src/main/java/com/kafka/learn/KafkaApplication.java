@@ -3,8 +3,8 @@ package com.kafka.learn;
 import com.kafka.learn.dagger.ApplicationComponent;
 import com.kafka.learn.dagger.ApplicationModule;
 import com.kafka.learn.dagger.DaggerApplicationComponent;
-import com.kafka.learn.resources.Consumption;
-import com.kafka.learn.resources.Producer;
+import com.kafka.learn.resources.ConsumerResource;
+import com.kafka.learn.resources.ProducerResource;
 
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;
@@ -23,8 +23,9 @@ public class KafkaApplication extends Application<KafkaConfiguration> {
 
     @Override
     public void run(KafkaConfiguration configuration, Environment environment) throws Exception {
-        environment.jersey().register(Consumption.class);
-        environment.jersey().register(Producer.class);
+        ApplicationComponent component = getApplicationComponent(configuration);
+        environment.jersey().register(component.consumption());
+        environment.jersey().register(component.producer());
     }
 
 }

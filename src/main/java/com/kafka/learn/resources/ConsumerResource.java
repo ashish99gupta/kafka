@@ -7,18 +7,18 @@ import javax.ws.rs.Path;
 import com.kafka.learn.service.ConsumerService;
 
 @Path("/consume")
-public class Consumption {
+public class ConsumerResource {
 
-    private ConsumerService producerService;
+    private ConsumerService consumerService;
 
     @Inject
-    public Consumption(ConsumerService service){
-        this.producerService = service;
+    public ConsumerResource(ConsumerService service){
+        this.consumerService = service;
     }
 
     @GET
     public void get(){
-        producerService.consume();
+        consumerService.consume();
     }
 
 }
